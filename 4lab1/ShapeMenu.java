@@ -19,7 +19,6 @@ public class ShapeMenu {
 
             switch (choice) {
                 case 1:
-                    // Handle terminal operations (if needed)
                     break;
                 case 2:
                     handleFileOperations(scanner);
@@ -54,7 +53,7 @@ public class ShapeMenu {
                     findShapeInFile(scanner);
                     break;
                 case 4:
-                    return; // Return to main menu
+                    return; 
                 default:
                     System.out.println("Некорректный выбор. Попробуйте еще раз.");
             }
@@ -105,32 +104,31 @@ public class ShapeMenu {
             case 1:
                 System.out.print("Введите радиус круга: ");
                 double radius = scanner.nextDouble();
-                return new Circle(shapeName, radius); // Adjust constructor as needed
+                return new Circle(shapeName, radius); 
             case 2:
                 System.out.print("Введите ширину прямоугольника: ");
                 double width = scanner.nextDouble();
                 System.out.print("Введите высоту прямоугольника: ");
                 double height = scanner.nextDouble();
-                return new Rectangle(shapeName, width, height); // Adjust constructor as needed
+                return new Rectangle(shapeName, width, height); 
             case 3:
                 System.out.print("Введите радиус основания цилиндра: ");
                 double baseRadius = scanner.nextDouble();
                 System.out.print("Введите высоту цилиндра: ");
                 double heightCylinder = scanner.nextDouble();
-                return new Cylinder(shapeName, baseRadius, heightCylinder); // Adjust constructor as needed
+                return new Cylinder(shapeName, baseRadius, heightCylinder); 
             case 4:
                 System.out.print("Введите радиус шара: ");
                 double sphereRadius = scanner.nextDouble();
-                return new Sphere(shapeName, sphereRadius); // Adjust constructor as needed
+                return new Sphere(shapeName, sphereRadius);
             default:
                 System.out.println("Некорректный выбор типа фигуры. Фигура не будет создана.");
-                return null; // Or handle as appropriate
+                return null; 
         }
     }
 
     public static void main(String[] args) {
-        // Create an instance of ShapeGroup (assuming you have this class)
-        ShapeGroup shapeGroup = new ShapeGroup(); // Ensure this class exists
+        ShapeGroup shapeGroup = new ShapeGroup(); 
         ShapeFileHandler shapeFileHandler = new ShapeFileHandler(shapeGroup);
         ShapeMenu menu = new ShapeMenu(shapeFileHandler);
         menu.showMenu();
